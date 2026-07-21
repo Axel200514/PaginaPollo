@@ -1,0 +1,25 @@
+html {
+    scrollbar-gutter: stable;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+    border-top: 6px solid var(--accent);
+    position: relative;
+}
+::selection {
+    background-color: var(--accent);
+    color: #fff;
+}
+h1, h2, h3, .logo {
+    font-family: var(--font-heading);
+    font-weight: 600;
+}

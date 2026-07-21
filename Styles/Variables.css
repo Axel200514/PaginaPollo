@@ -1,0 +1,36 @@
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('Fonts/Outfit-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Outfit';
+    src: url('Fonts/Outfit-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Cormorant Garamond';
+    src: url('Fonts/CormorantGaramond-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Cormorant Garamond';
+    src: url('Fonts/CormorantGaramond-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+:root {
+    --bg-primary: #F7F5F0;     
+    --bg-secondary: #EBE8DF;   
+    --text-main: #2C2C2C;      
+    --text-muted: #595959;     
+    --accent: #B89768;         
+    --accent-hover: #A08055;
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Outfit', sans-serif;
+    --max-width: 1200px;
+}

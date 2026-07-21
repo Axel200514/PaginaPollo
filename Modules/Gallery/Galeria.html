@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería - Brahma Premium</title>
+    <meta name="description" content="Galería visual de nuestros ejemplares de pollos Brahma.">
+    <link rel="stylesheet" href="../../Styles/Variables.css">
+    <link rel="stylesheet" href="../../Styles/Reset.css">
+    <link rel="stylesheet" href="../../Styles/Utilities.css">
+    <link rel="stylesheet" href="../../Styles/Layout.css">
+</head>
+<body>
+    <nav class="navbar" style="padding-top: 20px; padding-bottom: 20px;">
+        <div class="logo" style="margin: 0 auto; display: flex; justify-content: center;">
+            <img src="../../Styles/Images/Logo.png" alt="Brahma Logo" style="height: 180px; width: auto; object-fit: contain;">
+        </div>
+    </nav>
+    <section class="gallery-fullpage">
+        <div class="gallery-grid" id="gallery-container"></div>
+    </section>
+    <template id="gallery-card-template">
+        <article class="gallery-card">
+            <img src="" alt="" class="gallery-img" loading="lazy">
+            <div class="gallery-overlay">
+                <h3 class="gallery-title"></h3>
+            </div>
+        </article>
+    </template>
+    <footer class="footer">
+        <p>&copy; 2026 Brahma Premium. Todos los derechos reservados.</p>
+    </footer>
+    <a href="../Pagina Principal/index.html" class="floating-back-btn" title="Volver al Inicio" aria-label="Volver al Inicio">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+    </a>
+    <button class="btn-primary floating-contact-btn open-modal">Contactar</button>
+    <div class="modal-overlay" id="contactModal">
+        <div class="modal-content">
+            <button class="close-modal" aria-label="Cerrar modal">&times;</button>
+            <h2 class="modal-title">Contáctanos</h2>
+            <p class="modal-desc">Déjanos saber por dónde prefieres que hablemos y nos pondremos en contacto contigo a la brevedad.</p>
+            <div class="social-contact-grid">
+                <button class="social-btn" data-network="WhatsApp">
+                    <img src="../../Styles/Images/whatsapp.svg" alt="WhatsApp" class="social-icon">
+                    <div class="social-info">
+                        <span class="social-name">WhatsApp</span>
+                        <span class="social-desc">Atención inmediata</span>
+                    </div>
+                </button>
+                <button class="social-btn" data-network="Messenger">
+                    <img src="../../Styles/Images/messenger.svg" alt="Messenger" class="social-icon">
+                    <div class="social-info">
+                        <span class="social-name">Messenger</span>
+                        <span class="social-desc">Página de Facebook</span>
+                    </div>
+                </button>
+                <button class="social-btn" data-network="Instagram">
+                    <img src="../../Styles/Images/instagram.svg" alt="Instagram" class="social-icon">
+                    <div class="social-info">
+                        <span class="social-name">Instagram</span>
+                        <span class="social-desc">Mensaje Directo</span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="Galeria.js"></script>
+</body>
+</html>
