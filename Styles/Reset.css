@@ -24,3 +24,10 @@ h1, h2, h3, .logo {
     font-family: var(--font-heading);
     font-weight: 600;
 }
+img {
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    pointer-events: none;
+}
