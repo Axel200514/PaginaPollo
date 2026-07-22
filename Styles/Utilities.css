@@ -11,10 +11,18 @@
     text-transform: uppercase;
     cursor: pointer;
     position: relative;
-    top: 0;
-    transition: background-color 0.3s ease, top 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
     border-radius: 2px;
     animation: btnBreathe 3s infinite ease-in-out;
+}
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: transparent;
 }
 @keyframes btnBreathe {
     0% { transform: scale(1); }
@@ -24,7 +32,7 @@
 .btn-primary:hover {
     background-color: var(--accent);
     animation-play-state: paused;
-    top: -2px;
+    transform: translateY(-2px);
 }
 @media (prefers-reduced-motion: reduce) {
     .btn-primary {

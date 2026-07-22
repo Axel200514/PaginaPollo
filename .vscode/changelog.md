@@ -1,5 +1,14 @@
 CHANGELOG
 
+[2026-07-22] QoL & Performance
+
+- Reestructured project by moving index.html to root for SEO indexing.
+- Implemented skeleton loading (shimmer) animation for heavy gallery images.
+- Added decoding="async" and fetchpriority="high" to optimize main thread.
+- Applied content-visibility: auto and CSS containment to gallery cards.
+- Integrated SEO metadata (keywords, Open Graph tags) and Favicon.
+- Added GitHub developer attribution tags and footer credits.
+
 [2026-07-21] UI/UX & QoL
 
 - Implemented continuous breathing animations across primary and social buttons.
