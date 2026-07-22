@@ -149,6 +149,13 @@
     font-family: var(--font-heading);
     font-style: italic;
 }
+.section-divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, rgba(0,0,0,0.02), var(--accent), rgba(0,0,0,0.02));
+    margin: 45px 0;
+    opacity: 0.6;
+}
 .accordion-item {
     border-bottom: 1px solid rgba(0,0,0,0.1);
 }

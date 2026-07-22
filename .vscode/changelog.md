@@ -7,7 +7,10 @@ CHANGELOG
 - Added decoding="async" and fetchpriority="high" to optimize main thread.
 - Applied content-visibility: auto and CSS containment to gallery cards.
 - Integrated SEO metadata (keywords, Open Graph tags) and Favicon.
-- Added GitHub developer attribution tags and footer credits.
+- Refactored developer attribution to formalize footer styling.
+- Resolved Android Chrome native touch context menu bleed-through on images.
+- Reduced responsive top padding on About section for mobile/tablet optimization.
+- Added gradient visual dividers between textual content blocks for readability.
 
 [2026-07-21] UI/UX & QoL
 
