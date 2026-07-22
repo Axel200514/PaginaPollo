@@ -552,6 +552,9 @@
     color: var(--accent);
 }
 @media (max-width: 1024px) {
+    .about {
+        padding: 60px 5%;
+    }
     .hero {
         min-height: auto;
         padding-top: 80px;
@@ -583,6 +586,9 @@
     }
 }
 @media (max-width: 768px) {
+    .about {
+        padding: 40px 5%;
+    }
     .navbar {
         flex-direction: column;
         gap: 20px;
