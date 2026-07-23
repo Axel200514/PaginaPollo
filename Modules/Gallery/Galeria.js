@@ -8,7 +8,6 @@ if (galleryContainer && galleryTemplate) {
     lightbox.className = 'image-lightbox';
     lightbox.innerHTML = `
         <div class="lightbox-content-wrapper">
-            <button class="image-lightbox-close" aria-label="Cerrar">&times;</button>
             <img src="" alt="Imagen ampliada">
             <h3 class="gallery-title image-lightbox-title"></h3>
         </div>
@@ -47,7 +46,6 @@ if (galleryContainer && galleryTemplate) {
         window.removeEventListener('scroll', preventScroll);
     };
 
-    lightbox.querySelector('.image-lightbox-close').addEventListener('click', closeLightbox);
     lightbox.addEventListener('click', (e) => {
         if (e.target === lightbox) closeLightbox();
     });
