@@ -1,6 +1,10 @@
 {
   "aves": [
     {
+      "src": "../../Styles/Images/screenshot-2026-07-23-113706.png",
+      "title": "lapiz"
+    },
+    {
       "src": "../../Styles/Images/brahma_gallery_2_1784650474191.jpg",
       "alt": "Brahma Buff",
       "title": "Brahma Buff"
