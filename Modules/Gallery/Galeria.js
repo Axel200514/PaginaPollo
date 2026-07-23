@@ -81,6 +81,14 @@ if (galleryContainer && galleryTemplate) {
                     lightboxImg.src = item.src;
                     lightboxImg.alt = item.alt || item.title;
                     lightboxTitle.textContent = item.title;
+                    
+                    // Detectar si la imagen es vertical (ratio 9:16 por ejemplo)
+                    if (img.naturalHeight > img.naturalWidth) {
+                        lightbox.classList.add('portrait-mode');
+                    } else {
+                        lightbox.classList.remove('portrait-mode');
+                    }
+                    
                     document.body.style.overflow = 'hidden';
                     lightbox.classList.add('active');
                 });

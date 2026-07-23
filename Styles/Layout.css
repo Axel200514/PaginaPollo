@@ -560,6 +560,23 @@
     transform: scale(1.1);
     color: var(--accent);
 }
+@media (min-width: 1025px) {
+    .image-lightbox.portrait-mode {
+        flex-direction: row;
+        gap: 50px;
+    }
+    .image-lightbox.portrait-mode img {
+        max-height: 95vh;
+        max-width: 60vw;
+        order: 1;
+    }
+    .image-lightbox.portrait-mode .image-lightbox-title {
+        order: 2;
+        width: 250px;
+        margin: 0;
+        text-align: left;
+    }
+}
 @media (max-width: 1024px) {
     .about {
         padding: 60px 5%;
