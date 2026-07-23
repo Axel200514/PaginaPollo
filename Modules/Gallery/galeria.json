@@ -1,6 +1,10 @@
 {
   "aves": [
     {
+      "src": "../../Styles/Images/images.jpg",
+      "title": "Naruto"
+    },
+    {
       "src": "../../Styles/Images/brahma_gallery_2_1784650474191.jpg",
       "alt": "Brahma Buff",
       "title": "Brahma Buff"
