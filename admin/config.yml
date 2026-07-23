@@ -29,4 +29,3 @@ collections:
             fields:
               - {label: "Imagen", name: "src", widget: "image"}
               - {label: "Título", name: "title", widget: "string"}
-              - {label: "Texto alternativo (alt)", name: "alt", widget: "string"}
