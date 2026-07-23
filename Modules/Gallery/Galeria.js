@@ -37,7 +37,6 @@ if (galleryContainer && galleryTemplate) {
     const closeLightbox = () => {
         lightbox.classList.remove('active');
         document.body.style.overflow = '';
-        document.body.style.paddingRight = '';
         document.body.classList.remove('lightbox-open');
         document.documentElement.classList.remove('lightbox-open');
     };
@@ -92,8 +91,6 @@ if (galleryContainer && galleryTemplate) {
                         lightbox.classList.remove('portrait-mode');
                     }
                     
-                    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-                    document.body.style.paddingRight = `${scrollbarWidth}px`;
                     document.body.style.overflow = 'hidden';
                     document.body.classList.add('lightbox-open');
                     document.documentElement.classList.add('lightbox-open');
