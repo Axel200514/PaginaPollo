@@ -44,7 +44,8 @@ if (galleryContainer && galleryTemplate) {
         if (e.target === lightbox) closeLightbox();
     });
 
-    fetch('galeria.json')
+    // Se agrega timestamp para evitar que el navegador guarde una versión vieja en caché
+    fetch(`galeria.json?t=${new Date().getTime()}`)
         .then(response => response.json())
         .then(data => {
             const galleryData = data.aves || [];
