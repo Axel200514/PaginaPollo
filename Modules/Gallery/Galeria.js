@@ -7,9 +7,11 @@ if (galleryContainer && galleryTemplate) {
     const lightbox = document.createElement('div');
     lightbox.className = 'image-lightbox';
     lightbox.innerHTML = `
-        <button class="image-lightbox-close" aria-label="Cerrar">&times;</button>
-        <img src="" alt="Imagen ampliada">
-        <h3 class="gallery-title image-lightbox-title"></h3>
+        <div class="lightbox-content-wrapper">
+            <button class="image-lightbox-close" aria-label="Cerrar">&times;</button>
+            <img src="" alt="Imagen ampliada">
+            <h3 class="gallery-title image-lightbox-title"></h3>
+        </div>
     `;
     document.body.appendChild(lightbox);
     
