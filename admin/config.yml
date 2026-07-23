@@ -11,6 +11,8 @@ editor:
 collections:
   - name: "gallery_data"
     label: "Datos de la Galería"
+    editor:
+      preview: false
     files:
       - label: "Galería de Aves"
         name: "galeria"
