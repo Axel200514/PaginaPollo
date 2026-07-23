@@ -33,11 +33,16 @@ if (galleryContainer && galleryTemplate) {
         osc.start();
         osc.stop(audioCtx.currentTime + 0.05);
     }
+    let scrollPosition = 0;
+    const preventScroll = () => {
+        window.scrollTo(0, scrollPosition);
+    };
 
     const closeLightbox = () => {
         lightbox.classList.remove('active');
         document.body.classList.remove('lightbox-open');
         document.documentElement.classList.remove('lightbox-open');
+        window.removeEventListener('scroll', preventScroll);
     };
 
     lightbox.querySelector('.image-lightbox-close').addEventListener('click', closeLightbox);
@@ -89,6 +94,9 @@ if (galleryContainer && galleryTemplate) {
                     } else {
                         lightbox.classList.remove('portrait-mode');
                     }
+                    
+                    scrollPosition = window.scrollY;
+                    window.addEventListener('scroll', preventScroll);
                     
                     document.body.classList.add('lightbox-open');
                     document.documentElement.classList.add('lightbox-open');
