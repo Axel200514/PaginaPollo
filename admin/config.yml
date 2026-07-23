@@ -5,6 +5,9 @@ backend:
 media_folder: "Styles/Images" # Media files will be stored in the repo under Styles/Images
 public_folder: "../../Styles/Images" # The src attribute for uploaded media will begin with ../../Styles/Images
 
+editor:
+  preview: false
+
 collections:
   - name: "gallery_data"
     label: "Datos de la Galería"
@@ -12,6 +15,8 @@ collections:
       - label: "Galería de Aves"
         name: "galeria"
         file: "Modules/Gallery/galeria.json"
+        format: "json"
+        extension: "json"
         fields:
           - label: "Aves"
             name: "aves"
