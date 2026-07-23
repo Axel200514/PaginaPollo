@@ -519,7 +519,7 @@
 }
 .image-lightbox img {
     max-width: 90vw;
-    max-height: 75vh;
+    max-height: 90vh;
     object-fit: contain;
     display: block;
 }
@@ -537,12 +537,10 @@
     pointer-events: none;
     z-index: 2001;
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.4s ease 0.1s, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s;
+    transition: opacity 0.4s ease 0.1s;
 }
 .image-lightbox.active .image-lightbox-title {
     opacity: 1;
-    transform: translateY(0);
 }
 .lightbox-content-wrapper {
     position: relative;
