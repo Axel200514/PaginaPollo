@@ -548,9 +548,14 @@
     opacity: 1;
     transform: translateY(0);
 }
-
+.lightbox-content-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 @media (min-width: 1025px) {
-    .image-lightbox.portrait-mode {
+    .image-lightbox.portrait-mode .lightbox-content-wrapper {
         flex-direction: row;
         gap: 50px;
     }
@@ -581,7 +586,7 @@
     .gallery-grid {
         column-count: 2;
     }
-    .image-lightbox {
+    .image-lightbox .lightbox-content-wrapper {
         flex-direction: column;
     }
     .image-lightbox img {
