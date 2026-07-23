@@ -88,12 +88,7 @@ if (galleryContainer && galleryTemplate) {
                     lightboxImg.alt = item.alt || item.title;
                     lightboxTitle.textContent = item.title;
                     
-                    // Detectar si la imagen es vertical (ratio 9:16 por ejemplo)
-                    if (img.naturalHeight > img.naturalWidth) {
-                        lightbox.classList.add('portrait-mode');
-                    } else {
-                        lightbox.classList.remove('portrait-mode');
-                    }
+
                     
                     scrollPosition = window.scrollY;
                     window.addEventListener('scroll', preventScroll);
