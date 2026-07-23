@@ -37,6 +37,8 @@ if (galleryContainer && galleryTemplate) {
     const closeLightbox = () => {
         lightbox.classList.remove('active');
         document.body.style.overflow = '';
+        document.body.classList.remove('lightbox-open');
+        document.documentElement.classList.remove('lightbox-open');
     };
 
     lightbox.querySelector('.image-lightbox-close').addEventListener('click', closeLightbox);
@@ -90,6 +92,8 @@ if (galleryContainer && galleryTemplate) {
                     }
                     
                     document.body.style.overflow = 'hidden';
+                    document.body.classList.add('lightbox-open');
+                    document.documentElement.classList.add('lightbox-open');
                     lightbox.classList.add('active');
                 });
                 fragment.appendChild(clone);

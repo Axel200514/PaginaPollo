@@ -496,9 +496,13 @@
     z-index: 100;
     box-shadow: 0 10px 25px rgba(184, 151, 104, 0.3);
 }
+body.lightbox-open, html.lightbox-open {
+    overflow: hidden !important;
+}
+
 .image-lightbox {
     position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0; left: 0; right: 0; bottom: 0;
     background: rgba(0,0,0,0.85);
     backdrop-filter: blur(8px);
     display: flex;
