@@ -496,10 +496,6 @@
     z-index: 100;
     box-shadow: 0 10px 25px rgba(184, 151, 104, 0.3);
 }
-body.lightbox-open, html.lightbox-open {
-    overflow: hidden !important;
-}
-
 .image-lightbox {
     position: fixed;
     top: 0; left: 0; 
@@ -585,6 +581,9 @@ body.lightbox-open, html.lightbox-open {
     }
 }
 @media (max-width: 1024px) {
+    body.lightbox-open, html.lightbox-open {
+        overflow: hidden !important;
+    }
     .about {
         padding: 60px 5%;
     }
