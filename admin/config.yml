@@ -21,6 +21,9 @@ collections:
           - label: "Aves"
             name: "aves"
             widget: "list"
+            add_to_top: true
+            collapsed: true
+            summary: '{{fields.title}}'
             fields:
               - {label: "Imagen", name: "src", widget: "image"}
               - {label: "Título", name: "title", widget: "string"}
