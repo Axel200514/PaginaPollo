@@ -1,0 +1,22 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+
+media_folder: "Styles/Images" # Media files will be stored in the repo under Styles/Images
+public_folder: "../../Styles/Images" # The src attribute for uploaded media will begin with ../../Styles/Images
+
+collections:
+  - name: "gallery_data"
+    label: "Datos de la Galería"
+    files:
+      - label: "Galería de Aves"
+        name: "galeria"
+        file: "Modules/Gallery/galeria.json"
+        fields:
+          - label: "Aves"
+            name: "aves"
+            widget: "list"
+            fields:
+              - {label: "Imagen", name: "src", widget: "image"}
+              - {label: "Título", name: "title", widget: "string"}
+              - {label: "Texto alternativo (alt)", name: "alt", widget: "string"}

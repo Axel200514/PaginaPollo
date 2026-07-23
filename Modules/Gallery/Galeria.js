@@ -1,15 +1,4 @@
 // Script is placed at the end of the body, so it runs synchronously and instantly.
-const galleryData = [
-    { src: '../../Styles/Images/brahma_gallery_1_1784650464594.jpg', alt: 'Brahma Blanco y Negro', title: 'Brahma Blanco' },
-    { src: '../../Styles/Images/brahma_gallery_2_1784650474191.jpg', alt: 'Brahma Buff', title: 'Brahma Buff' },
-    { src: '../../Styles/Images/brahma_gallery_3_1784650484467.jpg', alt: 'Brahma Oscuro', title: 'Brahma Oscuro' },
-    { src: '../../Styles/Images/brahma_gallery_1_1784650464594.jpg', alt: 'Brahma Blanco', title: 'Blanco Joven' },
-    { src: '../../Styles/Images/brahma_gallery_2_1784650474191.jpg', alt: 'Brahma Buff', title: 'Buff Premium' },
-    { src: '../../Styles/Images/brahma_gallery_3_1784650484467.jpg', alt: 'Brahma Oscuro', title: 'Oscuro Majestuoso' },
-    { src: '../../Styles/Images/brahma_gallery_1_1784650464594.jpg', alt: 'Brahma Blanco', title: 'Blanco Imperial' },
-    { src: '../../Styles/Images/brahma_gallery_2_1784650474191.jpg', alt: 'Brahma Buff', title: 'Buff Especial' },
-    { src: '../../Styles/Images/brahma_gallery_3_1784650484467.jpg', alt: 'Brahma Oscuro', title: 'Oscuro Rey' }
-];
 
 const galleryContainer = document.getElementById('gallery-container');
 const galleryTemplate = document.getElementById('gallery-card-template');
@@ -55,45 +44,51 @@ if (galleryContainer && galleryTemplate) {
         if (e.target === lightbox) closeLightbox();
     });
 
-    const fragment = document.createDocumentFragment();
-    galleryData.forEach((item, index) => {
-        const clone = galleryTemplate.content.cloneNode(true);
-        const card = clone.querySelector('.gallery-card');
-        const img = clone.querySelector('.gallery-img');
-        
-        // Agregar animación shimmer mientras carga la imagen de 1MB
-        card.classList.add('skeleton-loading');
-        
-        img.src = item.src;
-        img.alt = item.alt;
-        img.decoding = 'async'; // Decodificación fuera del hilo principal
-        
-        if (index < 5) {
-            img.setAttribute('fetchpriority', 'high'); // Prioridad alta para las visibles
-        } else {
-            img.loading = 'lazy';
-        }
-        
-        // Cuando la imagen descargue por completo, remover shimmer y mostrar imagen
-        img.onload = () => {
-            img.classList.add('loaded');
-            card.classList.remove('skeleton-loading');
-        };
-        
-        clone.querySelector('.gallery-title').textContent = item.title;
-        
-        card.addEventListener('click', () => {
-            playProfessionalClick();
-            lightboxImg.src = item.src;
-            lightboxImg.alt = item.alt;
-            lightboxTitle.textContent = item.title;
-            document.body.style.overflow = 'hidden';
-            lightbox.classList.add('active');
-        });
-        fragment.appendChild(clone);
-    });
+    fetch('galeria.json')
+        .then(response => response.json())
+        .then(data => {
+            const galleryData = data.aves || [];
+            const fragment = document.createDocumentFragment();
+            galleryData.forEach((item, index) => {
+                const clone = galleryTemplate.content.cloneNode(true);
+                const card = clone.querySelector('.gallery-card');
+                const img = clone.querySelector('.gallery-img');
+                
+                // Agregar animación shimmer mientras carga la imagen de 1MB
+                card.classList.add('skeleton-loading');
+                
+                img.src = item.src;
+                img.alt = item.alt || item.title;
+                img.decoding = 'async'; // Decodificación fuera del hilo principal
+                
+                if (index < 5) {
+                    img.setAttribute('fetchpriority', 'high'); // Prioridad alta para las visibles
+                } else {
+                    img.loading = 'lazy';
+                }
+                
+                // Cuando la imagen descargue por completo, remover shimmer y mostrar imagen
+                img.onload = () => {
+                    img.classList.add('loaded');
+                    card.classList.remove('skeleton-loading');
+                };
+                
+                clone.querySelector('.gallery-title').textContent = item.title;
+                
+                card.addEventListener('click', () => {
+                    playProfessionalClick();
+                    lightboxImg.src = item.src;
+                    lightboxImg.alt = item.alt || item.title;
+                    lightboxTitle.textContent = item.title;
+                    document.body.style.overflow = 'hidden';
+                    lightbox.classList.add('active');
+                });
+                fragment.appendChild(clone);
+            });
 
-    galleryContainer.appendChild(fragment);
+            galleryContainer.appendChild(fragment);
+        })
+        .catch(error => console.error("Error loading gallery data:", error));
 }
 
 const contactModal = document.getElementById('contactModal');
